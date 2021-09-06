@@ -9,8 +9,8 @@ const Image = styled(BackgroundImage)`
 const ImageText = styled.div`
   background-image: linear-gradient(
     to top,
-    rgba(34, 49, 63, 0.6),
-    rgba(34, 49, 63, 0.6)
+    rgba(34, 49, 63, 0.3),
+    rgba(34, 49, 63, 0.3)
   );
   color: #ffffff;
   height: 100%;
@@ -41,8 +41,8 @@ const MainImage = () => {
   const { image } = useStaticQuery(graphql`
     query {
       image: file(relativePath: { eq: "main.jpg" }) {
-        sharp: childImageSharp {
-          fluid {
+        childImageSharp {
+          fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -51,7 +51,7 @@ const MainImage = () => {
   `)
 
   return (
-    <Image Tag="section" fluid={image.sharp.fluid}>
+    <Image Tag="section" fluid={image.childImageSharp.fluid}>
       <ImageText>
         <h1>Bienvenido a Hotel del Valle</h1>
         <p>Un espacio de relax</p>
