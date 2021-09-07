@@ -4,30 +4,31 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 
-const TextContainer = styled.div`
+const Content = styled.main`
   padding-top: 4rem;
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
+
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
+    column-gap: 3rem;
   }
   p {
     line-height: 2;
   }
 `
 
-const MainContent = () => {
+const AboutUsContent = () => {
   const data = useStaticQuery(graphql`
     query {
-      allDatoCmsPage(filter: { slug: { eq: "main-content" } }) {
+      allDatoCmsPage(filter: { slug: { eq: "about-us" } }) {
         nodes {
           title
           content
           image {
-            gatsbyImageData
+            gatsbyImageData(width: 1200)
           }
         }
       }
@@ -40,19 +41,19 @@ const MainContent = () => {
     <>
       <h2
         css={css`
+          margin-top: 4rem;
           text-align: center;
           font-size: 4rem;
-          margin-top: 4rem;
         `}
       >
         {title}
       </h2>
-      <TextContainer>
+      <Content>
         <p>{content}</p>
-        <GatsbyImage image={image.gatsbyImageData} alt="inicio" />
-      </TextContainer>
+        <GatsbyImage image={image.gatsbyImageData} alt="about us" />
+      </Content>
     </>
   )
 }
 
-export default MainContent
+export default AboutUsContent
