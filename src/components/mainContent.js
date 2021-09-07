@@ -5,14 +5,14 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 
 const TextContainer = styled.div`
-  padding-top: 4rem;
+  padding-top: 2rem;
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
+    column-gap: 3rem;
   }
   p {
     line-height: 2;
@@ -49,7 +49,10 @@ const MainContent = () => {
       </h2>
       <TextContainer>
         <p>{content}</p>
-        <GatsbyImage image={image.gatsbyImageData} alt="inicio" />
+        <GatsbyImage
+          image={image.gatsbyImageData}
+          alt="Descubrí nuestro hotel"
+        />
       </TextContainer>
     </>
   )
