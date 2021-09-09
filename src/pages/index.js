@@ -20,18 +20,11 @@ const RoomsList = styled.ul`
 `
 
 const IndexPage = () => {
-  const [isLoaded, setLoaded] = React.useState(false)
-
-  React.useEffect(() => {
-    setLoaded(true)
-  }, [])
-
   const rooms = useRooms()
-  console.log(rooms)
 
   return (
     <Layout>
-      {isLoaded && <MainImage />}
+      <MainImage />
       <MainContent />
       <h2
         css={css`

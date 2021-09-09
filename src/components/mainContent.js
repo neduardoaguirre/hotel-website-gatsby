@@ -44,6 +44,7 @@ const MainContent = () => {
           font-size: 4rem;
           margin-top: 4rem;
         `}
+        id="nosotros"
       >
         {title}
       </h2>

@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
+import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa"
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: center;
-  padding-bottom: 3rem;
+  flex-direction: column;
+  /* padding-bottom: 3rem; */
   @media (min-width: 768px) {
     padding-bottom: 0;
   }
@@ -29,17 +30,33 @@ const NavLink = styled(Link)`
   }
 `
 
-const Navigation = () => {
+const SocialMedia = () => {
   return (
     <Nav>
-      <NavLink to={"/"} activeClassName="current-page">
-        Inicio
-      </NavLink>
-      <NavLink to={"/#nosotros"} activeClassName="current-page">
-        Nosotros
-      </NavLink>
+      <h4
+        css={css`
+          margin: 1rem;
+          text-align: center;
+          color: #ffffff;
+        `}
+      >
+        Nuestras Redes
+      </h4>
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+        `}
+      >
+        <NavLink to={"/#"}>
+          <FaFacebookSquare />
+        </NavLink>
+        <NavLink to={"/#"}>
+          <FaInstagram />
+        </NavLink>
+      </div>
     </Nav>
   )
 }
 
-export default Navigation
+export default SocialMedia
