@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import { Global, css } from "@emotion/react"
 import Footer from "./footer"
 import useSeo from "../hooks/useSeo"
+import ScrollUp from "./scroll-up"
 
 const Layout = props => {
   const seo = useSeo()
@@ -64,6 +65,7 @@ const Layout = props => {
         />
       </Helmet>
       <Header />
+      <ScrollUp />
       {props.children}
       <Footer title={title} />
     </>
