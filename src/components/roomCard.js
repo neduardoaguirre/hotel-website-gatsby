@@ -17,7 +17,7 @@ const Button = styled(Link)`
   text-align: center;
 `
 
-const RoomPreview = ({ room }) => {
+const RoomCard = ({ room }) => {
   const { image, title, slug, resume } = room
   return (
     <div
@@ -40,4 +40,4 @@ const RoomPreview = ({ room }) => {
   )
 }
 
-export default RoomPreview
+export default RoomCard

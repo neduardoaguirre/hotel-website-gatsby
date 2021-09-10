@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { FaFacebookSquare, FaInstagram } from "react-icons/fa"
 
 const Nav = styled.nav`
   display: flex;
@@ -32,11 +31,11 @@ const NavLink = styled(Link)`
 const Navigation = () => {
   return (
     <Nav>
-      <NavLink to={"/"} activeClassName="current-page">
-        Inicio
-      </NavLink>
-      <NavLink to={"/#nosotros"} activeClassName="current-page">
+      <NavLink to={"/about-us"} activeClassName="current-page">
         Nosotros
+      </NavLink>
+      <NavLink to={"/rooms"} activeClassName="current-page">
+        Habitaciones
       </NavLink>
     </Nav>
   )

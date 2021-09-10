@@ -37,10 +37,10 @@ const ImageText = styled.div`
   }
 `
 
-const MainImage = () => {
+const Home = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "main.jpg" }) {
+      image: file(relativePath: { eq: "inicio.jpg" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -60,4 +60,4 @@ const MainImage = () => {
   )
 }
 
-export default MainImage
+export default Home

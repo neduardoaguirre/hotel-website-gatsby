@@ -2,15 +2,28 @@ import React from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import Navigation from "./navigation"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const Home = styled(Link)`
-  color: #ffffff;
-  text-align: center;
+const Logo = styled(Link)`
+  display: flex;
+  align-items: start;
+  justify-content: center;
   text-decoration: none;
+  color: #ffffff;
 `
 
 const Header = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "hotel_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 250)
+        }
+      }
+    }
+  `)
+
   return (
     <header
       css={css`
@@ -29,9 +42,12 @@ const Header = () => {
           }
         `}
       >
-        <Home to="/">
-          <h1>Hotel del Valle</h1>
-        </Home>
+        <Logo to="/">
+          <GatsbyImage
+            image={image.childImageSharp.gatsbyImageData}
+            alt="Logo Hotel"
+          />
+        </Logo>
 
         <Navigation />
       </div>

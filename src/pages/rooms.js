@@ -2,8 +2,8 @@ import React from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import useRooms from "../hooks/useRooms"
-import RoomPreview from "../components/roomPreview"
-import Layout from "./layout"
+import RoomCard from "../components/roomCard"
+import Layout from "../components/layout"
 
 const RoomsList = styled.ul`
   list-style: none;
@@ -17,7 +17,7 @@ const RoomsList = styled.ul`
   }
 `
 
-const IndexPage = () => {
+const Rooms = () => {
   const rooms = useRooms()
   return (
     <Layout>
@@ -32,11 +32,11 @@ const IndexPage = () => {
       </h2>
       <RoomsList>
         {rooms.map(room => (
-          <RoomPreview key={room.id} room={room} />
+          <RoomCard key={room.id} room={room} />
         ))}
       </RoomsList>
     </Layout>
   )
 }
 
-export default IndexPage
+export default Rooms
