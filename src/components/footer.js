@@ -2,12 +2,13 @@ import React from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import {
   FaWhatsapp,
   FaPhone,
   FaFacebookSquare,
   FaInstagram,
+  FaEnvelope,
 } from "react-icons/fa"
 
 const Nav = styled.nav`
@@ -23,10 +24,10 @@ const Nav = styled.nav`
   }
 `
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   color: #ffffff;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1rem;
   font-family: "PT Sans", sans-serif;
   text-decoration: none;
@@ -100,10 +101,17 @@ const Footer = ({ title }) => {
               <FaPhone /> (+54) 9 2624 – 450003
             </p>
             <p>
-              <FaPhone /> (+54) 9 2624 – 450004
+              <FaWhatsapp /> +549 2624 - 54897485
             </p>
             <p>
-              <FaWhatsapp /> +549 2624 - 54897485
+              <NavLink href="mailto:info@hoteldelvalle.com.ar">
+                <FaEnvelope
+                  css={css`
+                    vertical-align: middle;
+                  `}
+                />{" "}
+                info@hoteldelvalle.com.ar
+              </NavLink>
             </p>
           </Nav>
           <Nav>
@@ -122,10 +130,10 @@ const Footer = ({ title }) => {
                 justify-content: center;
               `}
             >
-              <NavLink to={"/#"}>
+              <NavLink href="https://facebook.com">
                 <FaFacebookSquare />
               </NavLink>
-              <NavLink to={"/#"}>
+              <NavLink href="https://instgram.com">
                 <FaInstagram />
               </NavLink>
             </div>

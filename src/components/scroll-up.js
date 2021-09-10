@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 import styled from "@emotion/styled"
-import { css } from "@emotion/react"
-import { Link } from "gatsby"
 import { FaAngleUp } from "react-icons/fa"
 
 const Button = styled.div`
@@ -35,16 +33,12 @@ const ScrollUp = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 100) {
-        setShowButton(true)
-      } else {
-        setShowButton(false)
-      }
+      window.pageYOffset > 100 ? setShowButton(true) : setShowButton(false)
     })
-  }, [])
+  })
 
   const scrollUp = () => {
-    window.scrollTo(0, 0)
+    window[`scrollTo`]({ top: 0, behavior: `smooth` })
   }
 
   return (

@@ -37,6 +37,9 @@ const Navigation = () => {
       <NavLink to={"/rooms"} activeClassName="current-page">
         Habitaciones
       </NavLink>
+      <NavLink to={"/restaurant"} activeClassName="current-page">
+        Restaurant
+      </NavLink>
     </Nav>
   )
 }
