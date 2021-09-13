@@ -5,15 +5,14 @@ import styled from "@emotion/styled"
 import { Link } from "gatsby"
 
 const Button = styled(Link)`
-  margin-top: 2rem;
-  padding: 1rem;
+  border-radius: 1rem;
+  padding: 1rem 4rem;
   background-color: rgba(44, 62, 80, 0.85);
   width: 100%;
   color: #ffffff;
   display: block;
   text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   text-align: center;
 `
 

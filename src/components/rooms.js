@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import useRooms from "../hooks/useRooms"
 import RoomPreview from "../components/roomPreview"
 import Layout from "./layout"
+import { H2 } from "./styles"
 
 const RoomsList = styled.ul`
   list-style: none;
@@ -21,15 +22,7 @@ const IndexPage = () => {
   const rooms = useRooms()
   return (
     <Layout>
-      <h2
-        css={css`
-          text-align: center;
-          margin-top: 4rem;
-          font-size: 4rem;
-        `}
-      >
-        Nuestras Habitaciones
-      </h2>
+      <H2>Nuestras Habitaciones</H2>
       <RoomsList>
         {rooms.map(room => (
           <RoomPreview key={room.id} room={room} />

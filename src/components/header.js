@@ -2,15 +2,18 @@ import React from "react"
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import Navigation from "./navigation"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
+import { Logo } from "./styles"
 
-const Logo = styled(Link)`
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  text-decoration: none;
-  color: #ffffff;
+const ContainerHeader = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 const Header = () => {
@@ -31,26 +34,15 @@ const Header = () => {
         padding: 1rem;
       `}
     >
-      <div
-        css={css`
-          max-width: 1200px;
-          margin: 0 auto;
-          @media (min-width: 768px) {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-        `}
-      >
+      <ContainerHeader>
         <Logo to="/">
           <GatsbyImage
             image={image.childImageSharp.gatsbyImageData}
             alt="Logo Hotel"
           />
         </Logo>
-
         <Navigation />
-      </div>
+      </ContainerHeader>
     </header>
   )
 }

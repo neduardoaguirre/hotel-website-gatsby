@@ -3,6 +3,7 @@ import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
+import { Logo } from "./styles"
 import {
   FaWhatsapp,
   FaPhone,
@@ -37,18 +38,14 @@ const NavLink = styled.a`
     margin-right: 0;
   }
 `
-
-const Logo = styled.div`
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  text-decoration: none;
+const Copyright = styled.p`
+  text-align: center;
   color: #ffffff;
-  @media (max-width: 768px) {
-    margin-bottom: 2rem;
-  }
+  background-color: rgb(33, 44, 55);
+  margin: 0;
+  padding: 1rem;
 `
-const Container = styled.div`
+const ContainerFooter = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   @media (min-width: 768px) {
@@ -56,6 +53,12 @@ const Container = styled.div`
     align-items: start;
     justify-content: space-around;
   }
+`
+
+const H4 = styled.h4`
+  margin: 1rem;
+  text-align: center;
+  color: #ffffff;
 `
 
 const Footer = ({ title }) => {
@@ -78,7 +81,7 @@ const Footer = ({ title }) => {
           padding: 1rem;
         `}
       >
-        <Container>
+        <ContainerFooter>
           <Logo>
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
@@ -86,15 +89,7 @@ const Footer = ({ title }) => {
             />
           </Logo>
           <Nav>
-            <h4
-              css={css`
-                margin: 1rem;
-                text-align: center;
-                color: #ffffff;
-              `}
-            >
-              Direccion y Contacto
-            </h4>
+            <H4>Dirección y Contacto</H4>
 
             <p>Ruta 7 km 1127 Uspallata, Mendoza – Argentina</p>
             <p>
@@ -115,15 +110,7 @@ const Footer = ({ title }) => {
             </p>
           </Nav>
           <Nav>
-            <h4
-              css={css`
-                margin: 1rem;
-                text-align: center;
-                color: #ffffff;
-              `}
-            >
-              Nuestras Redes
-            </h4>
+            <H4>Nuestras Redes</H4>
             <div
               css={css`
                 display: flex;
@@ -138,19 +125,11 @@ const Footer = ({ title }) => {
               </NavLink>
             </div>
           </Nav>
-        </Container>
+        </ContainerFooter>
       </footer>
-      <p
-        css={css`
-          text-align: center;
-          color: #ffffff;
-          background-color: rgb(33, 44, 55);
-          margin: 0;
-          padding: 1rem;
-        `}
-      >
+      <Copyright>
         {title}. Todos los derechos reservados {year} &copy;
-      </p>
+      </Copyright>
     </>
   )
 }

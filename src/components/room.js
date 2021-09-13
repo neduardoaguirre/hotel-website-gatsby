@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "./layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
-import styled from "@emotion/styled"
+import { Container, TextBox } from "./styles"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -16,19 +16,6 @@ export const query = graphql`
         }
       }
     }
-  }
-`
-const Container = styled.main`
-  padding: 3rem 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 3rem;
-  }
-  p {
-    line-height: 2;
   }
 `
 
@@ -57,14 +44,11 @@ const Room = ({
           {title}
         </h1>
         <Container>
-          <GatsbyImage
-            image={image.gatsbyImageData}
-            alt={title}
-            css={css`
-              border-radius: 1rem;
-            `}
-          />
-          <p>{content}</p>
+          <GatsbyImage image={image.gatsbyImageData} alt={title} />
+          <TextBox>
+            {" "}
+            <p>{content}</p>
+          </TextBox>
         </Container>
       </main>
     </Layout>
