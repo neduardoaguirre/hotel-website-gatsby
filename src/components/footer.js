@@ -82,7 +82,7 @@ const Footer = ({ title }) => {
         `}
       >
         <ContainerFooter>
-          <Logo>
+          <Logo to={"/"}>
             <GatsbyImage
               image={image.childImageSharp.gatsbyImageData}
               alt="Logo Hotel"
