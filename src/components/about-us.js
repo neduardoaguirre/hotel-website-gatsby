@@ -8,7 +8,7 @@ const Image = styled(GatsbyImage)`
   border-radius: 1rem;
 `
 
-const Content = styled.main`
+const Container = styled.section`
   padding-top: 3rem;
   max-width: 1200px;
   width: 95%;
@@ -59,10 +59,10 @@ const AboutUsContent = () => {
       >
         {title}
       </h2>
-      <Content>
+      <Container>
         <p>{text1}</p>
         <Image image={image1.gatsbyImageData} alt={title} />
-      </Content>
+      </Container>
       <h2
         css={css`
           margin-top: 4rem;
@@ -72,10 +72,10 @@ const AboutUsContent = () => {
       >
         El Valle
       </h2>
-      <Content>
+      <Container>
         <Image image={image2.gatsbyImageData} alt={title} />
         <p>{text2}</p>
-      </Content>
+      </Container>
     </>
   )
 }

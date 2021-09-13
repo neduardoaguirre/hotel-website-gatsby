@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
 
-const Image = styled(BackgroundImage)`
+const MainImage = styled(BackgroundImage)`
   height: 700px;
 `
 const ImageText = styled.div`
@@ -51,12 +51,12 @@ const Home = () => {
   `)
 
   return (
-    <Image Tag="section" fluid={image.childImageSharp.fluid}>
+    <MainImage Tag="section" fluid={image.childImageSharp.fluid}>
       <ImageText>
         <h1>Bienvenido a Hotel del Valle</h1>
         <p>Un espacio de relax</p>
       </ImageText>
-    </Image>
+    </MainImage>
   )
 }
 
